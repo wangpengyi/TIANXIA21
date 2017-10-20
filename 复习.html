@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//join()指定分隔符
+	/*var arr=[1,2,3,4]
+	var arr2=arr.join("-")
+	alert(arr2)*/
+
+	//reverse()顺序颠倒
+	/*var a=[2,6,8,7]
+	var arr2=a.reverse()
+	alert(arr2)*/
+
+	//sort()按顺序排列
+	/*var a=["b","c","e","a","d","f",]
+	var a2=a.sort()
+	alert(a2)*/
+
+	//concat()合并两个数组
+	/*var arr=new Array("你好","林志玲")
+	var arr2=new Array("我爱你","请嫁给我吧！")
+	var arr3=arr.concat(arr2);
+	alert(arr3)*/
+
+	//slice他两个参数分别指定片段的开始和结束位置
+	/*var arr1=new Array(1,2,3,4,5) ;
+	alert(arr1.slice(1,2))*/
+
+	//splice()
+	/*var arr=new Array(1,2,3,4,5,6,)
+	var arr2=arr.splice(4)
+	alert(arr2)*/
+
+	//toString把Date转换成字符串
+	/*var d=new Date();
+	document.write(d.toString())*/
+
+	//toLocaleString()把本地时间转换成之间符串
+	/*var d=new Date();
+	document.write(d.toLocaleString())*/
+
+	//Math.random()可以返回0~1的数字
+	/*var arr=Math.random()
+	document.write(arr)*/
+
+	//Math.pow()可以返回次幂的值
+
+	//charAt()显示指定的字符
+	/*var a=new String("cdcvcds")
+	alert(a.charAt(1));*/
+	
+	//1~9的随机数
+	var arr=new Array(5);
+	for (var i =0; i <arr.length; i++) {
+		var b=parseInt(Math.random()*(9-1+1)+1)
+		arr[i]=b;
+	};
+	/*var max=arr[0]
+	var min=arr[0]
+	for (var a = 0; a <arr.length; a++) {
+		if (max<arr[a]) {
+			max=arr[a];
+		}
+		if (min>arr[a]){
+			min=arr[a];
+		}
+		}
+		document.write("最大值"+max+"<br>")
+		document.write("最小值"+min+"<br>")
+		document.write(arr)*/
+		/*var b=function(){
+		var a="hfkdekn"
+		var a2=a.split("")
+		var a3=a2.reverse()
+		
+		document.write(a3)
+	}*/
+	/*var time=setInterval(function(){
+		document.write("一句话"+"<br>")
+	};1000)*/
+
+	/*var a=prompt("请输入")
+	var time=setInterval(dy,1000)
+	//clearInterval(time)
+	function dy(){
+		document.write(a)
+	}*/
+
+	//延时器
+	/*var c=setTimeout(function(){
+		document.write("你好")
+	},1);
+	clearTimeout(c)*/
+
+	//弹框
+	//clert()
+	//prompt()
+	/*var a=confirm()
+	if (a==true) {
+		document.write("我们是朋友")
+	}else{
+		document.write("我们不是朋友")
+	}*/
+
+	/*var a=prompt("口红擦干净了么")
+	if (a=="擦净了") {
+		document.write("亲爱的欢迎回来")
+	}else if (a=="没擦"){
+		document.write("老王我们继续")
+	}else{
+		document.write("滚犊子")
+	}*/
+
+	//Location
+	/*document.write(window.location.hostname+"<br>"+"主机名")
+	document.write(window.location.pathname+"<br>"
+		+"路径")
+	document.write(window.location.protocol+"<br>"
+		+"协议")
+	document.write(window.location.href+"<br>")*/
+
+
+	
+
+		
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+	用户注册<br>
+	用户名：<input type="text" id="txt1"><p class="ppp">开头为字母，长度为3位，最多六位</p><br>
+	密码框：<input type="password" id="txt2"><p class="pp2">必须由六位字母组成</p><br>
+	确认框：<input type="password" id="txt3"><p class="pp3">
+	密码必须一样</p><br>
+	<button id="buu"><h3>注册</h3></button>
+	<table border="1" cellspacing="0" cellpadding="0">
+		<tr>
+			<td>序列号</td>
+			<td>用户名</td>
+			<td>注册时间</td>
+			<td>操作</td>
+		</tr>
+	</table>
+	<script>
+	var tet1=document.getElementById("txt1")
+	var tet2=document.getElementById("txt2")
+	var tet3=document.getElementById("txt3")
+	var opp=document.getElementsByClassName("ppp")[0]
+	var opp2=document.getElementsByClassName("pp2")[0]
+	var opp3=document.getElementsByClassName("pp3")[0]
+	var obuu=document.getElementById("buu")
+	var tbod=document.getElementsByTagName("tbody")[0]
+
+	tet1.onblur=function(){
+		var reg=/^\w{3,6}$/;
+		var str=tet1.value;
+		if (tet1.value=="") {
+			opp.innerHTML="请输入用户名"
+			opp.style.color="red"
+		 }else if(reg.test(str)) {
+		 	opp.innerHTML="格式正确"
+			opp.style.color="green"
+		}else{
+			opp.innerHTML="格式错误"
+			opp.style.color="yellow"
+		}
+		}
+	tet2.onblur=function(){
+		var reg2=/^[a-z]\w{8,12}$/;
+		var str2=tet2.value;
+		if (tet2.value=="") {
+			opp2.innerHTML="请输入密码"
+			opp2.style.color="red"
+		 }else if(reg2.test(str2)) {
+		 	opp2.innerHTML="格式正确"
+			opp2.style.color="green"
+		}else{
+			opp2.innerHTML="格式错误"
+			opp2.style.color="yellow"
+		}
+		}
+	tet3.onblur=function(){
+		var reg3=/^[A-Z]\w{8,12}$/;
+		var str3=tet3.value;
+		if (tet3.value=="") {
+			opp3.innerHTML="请输入正确密码"
+			opp3.style.color="red"
+		 }else if(tet2=tet3) {
+		 	opp3.innerHTML="密码正确"
+			opp3.style.color="green"
+		}else{
+			opp3.innerHTML="格式错误"
+			opp3.style.color="yellow"
+		}
+		}
+		obuu.onclick=function(){
+			var a=tet1.value
+			
+		var otr=document.createElement("tr")
+		var otd1=document.createElement("td")
+		var otd2=document.createElement("td")
+		var otd3=document.createElement("td")
+		var otd4=document.createElement("td")
+
+		tbod.appendChild(otr)
+		otr.appendChild(otd1)
+		otr.appendChild(otd2)
+		otr.appendChild(otd3)
+		otr.appendChild(otd4)
+
+		otd2.innerHTML=a
+		otd3.innerHTML=new Date().toLocaleString()
+		otd4.innerHTML="<button class='bu'>操作</button>"
+	
+	var buut=document.getElementsByClassName("bu")[0]
+	for (var i =0; i<buut.length; i++) {
+		buut[i].onclick=function(){
+			tbod.removeChild(this.parentNode.parentNode)
+
+		}
+	};
+}
+
+	</script>
+</body>
+</html>

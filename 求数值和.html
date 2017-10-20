@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script>
+//		将数组中数值元素的和，比如： var num=[2,”one”,4,2,”zero”,2];
+//		(要求必需通过有参数有返回值得函数实现，如果不使用函数实现，只能得15分。)
+//			 var num=[2,"one",4,2,"zero",2];
+//			 //定义一个求和变量
+//          //改写函数
+//          var add = function(arr){  //有参数
+//               var sum = 0;
+//				 for(var i=0;i<arr.length;i++){
+//				 ///	alert(typeof num[i])
+//				 	if(typeof arr[i] =="number"){
+//				 		sum+=arr[i];
+//				 	}
+//				 }
+//	          return sum; //有返回值
+//          }
+//          //调用函数
+//          document.write(add(num));
+            
+           // 它从1计数到100，遇到3的倍数就替换为单词“Flip”，
+           // 5的倍数就替换为单词“Flop”，
+             // 即为3的倍数又为5的倍数则替换为单词“FlipFlop”。（30   分）
+             
+          /*   for(var i = 1;i<=100;i++){
+             	if(i%3==0&&i%5 ==0){
+             		document.write("flipflop<br>");
+             	}else if(i%5 ==0){
+             		document.write("flop<br>");
+             	}else if(i%3 == 0){
+             		document.write("flip<br>");
+             	}else{
+             		document.write(i +"<br>");
+             	}
+             }*/
+             //数组去重
+             var arr=[1,3,1,5,5,7,9];
+             //定义一个新数组 
+             var arr2 = [];
+             for(var i=0;i<arr.length;i++){
+             	if(arr2.indexOf(arr[i])==-1){
+             		arr2.unshift(arr[i]);
+             	}
+             }
+             document.write(arr2);
+              //document.write(arr2.reverse());
+		</script>
+	</body>
+</html>

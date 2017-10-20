@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<select id="sheng">
+		<option>--请选择--</option>
+		<option>辽宁</option>
+		<option>河南</option>
+		<option>北京</option>
+		<option>山西</option>
+	</select>
+	<select id="shi">
+		<option>--请选择--</option>
+	</select>
+	<script type="text/javascript">
+	var shi2=[["老虎滩","沈阳故宫"],["少林寺","嵩山","避暑山庄"],["鸟巢","故宫"],["面条"]]
+
+	var osheng=document.getElementById("sheng")
+	var oshi=document.getElementById("shi")
+	osheng.onchange=function(){
+		var b=osheng.selectedIndex;
+		var arr=shi2[b-1]
+		oshi.length=1
+		for (var i = 0; i<arr.length; i++) {
+			var op=document.createElement("option")
+			op.innerHTML=arr[i]
+			oshi.appendChild(op)
+		};
+	}
+	
+	</script>
+</body>
+</html>

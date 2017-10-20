@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select name="" id="sheng">
+			<option>--请选择--</option>
+			<option>北京</option>
+			<option>上海</option>
+			<option>杭州</option>
+		</select>
+		<select name="" id="shi">
+			<option>--请选择--</option>
+		</select>
+		<p>您当前选择的是:<span id="sh">xx省</span>-<span id="hi">xx市</span></p>
+		<script>
+	       var shi = [
+	       ["北京1","北京2","北京3"],["上海1","上海2","上海3"],["杭州1","杭州2"]
+	       ]
+			var osheng = document.getElementById("sheng");
+			var oshi = document.getElementById("shi");
+			var sp1 = document.getElementById("sh");
+			var sp2 = document.getElementById("hi");
+			osheng.onchange = function(){
+				var b = osheng.selectedIndex;
+				var arr = shi[b-1];
+				oshi.length = 1;
+				for(var i=0;i<arr.length;i++){
+					var opt = document.createElement("option");
+					opt.innerHTML = arr[i];
+					oshi.appendChild(opt);
+				}
+				sp1.innerHTML =osheng.value;
+			}
+			oshi.onchange = function(){
+				sp2.innerHTML = oshi.value;
+			}
+		
+		</script>
+	</body>
+</html>

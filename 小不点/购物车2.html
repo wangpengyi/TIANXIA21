@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<th><input type="checkbox"  class="chk" onclick="qx()"/>全选</th>
+				<th>商品名称</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  class="chk" onclick ="zj()" /></td>			
+				<td>糖</td>
+				<td class="dj">100</td>
+				<td><button onclick="min(this)">-</button><input type="text" value="0" class="num"><button onclick="add(this)">+</button></td>
+				<td class="xj">0元</td>
+				<td onclick="del(this)">删除</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  class="chk" onclick ="zj()"/></td>
+				<td>巧克力</td>
+				<td class="dj">1000</td>
+				<td><button onclick="min(this)">-</button><input type="text" value="0" class="num"><button onclick="add(this)">+</button></td>
+				<td class="xj">0元</td>
+				<td onclick="del(this)">删除</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="chk" onclick ="zj()" /></td>
+				<td>薯片</td>
+				<td class="dj">50</td>
+				<td><button onclick="min(this)">-</button><input type="text" value="0" class="num"><button onclick="add(this)">+</button></td>
+				<td class="xj">0元</td>
+				<td onclick="del(this)">删除</td>
+			</tr>
+		</table>
+		总计:<span id="zj">0</span>元
+		<script>
+			//全选/全不选
+			var ochk = document.getElementsByClassName("chk");
+			function qx(){
+				for(var i=0;i<ochk.length;i++){
+					ochk[i].checked = ochk[0].checked;
+				}
+				zj();
+			}
+			//数量加
+			function add(t){
+				//console.log(t.previousElementSibling)
+				t.previousElementSibling.value++;
+				xj()
+				zj()
+			}
+			//数量减
+			function min(t){
+				if(t.nextElementSibling.value<=0){
+					t.nextElementSibling.value = 0;
+				}else{
+					t.nextElementSibling.value--;
+				}
+				xj()
+				zj()
+			}
+			//小计
+			var onum = document.getElementsByClassName("num");
+			var oxj = document.getElementsByClassName("xj");
+			var odj = document.getElementsByClassName("dj");
+			function xj(){
+				for(var j=0;j<onum.length;j++){
+					oxj[j].innerHTML = onum[j].value *odj[j].innerHTML+"元";
+				}
+			}
+			//总价
+			var ozj = document.getElementById("zj");
+			function zj(){
+				var sum = 0;
+				for(var k=0;k<ochk.length-1;k++){
+					if(ochk[k+1].checked == true){
+						sum+= parseInt(oxj[k].innerText);
+					}
+				}
+				ozj.innerHTML = sum;
+			}
+			//删除
+			var otb = document.getElementsByTagName("tbody")[0];
+			function del(t){
+				otb.removeChild(t.parentNode);
+				zj();
+			}
+		</script>
+	</body>
+</html>

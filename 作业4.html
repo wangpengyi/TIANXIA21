@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div{
+		width: 400px;
+		height: 600px;
+		margin: 0 auto;
+		background: pink;
+	}
+	
+
+	</style>
+</head>
+<body>
+	<div>
+		标签：<br>
+		<input type="text" id="txt" style="width:310px;"><br>
+		内容：<br>
+		<textarea  id="nr" cols="40" rows="20" ></textarea><br>
+		<button id="bu">发布</button>
+		<h2>分享新鲜事.....</h2>
+		<ul id="ul"></ul>
+		<script>
+		var tet=document.getElementById("txt")
+		var area=document.getElementById("nr")
+		var buu=document.getElementById("bu")
+		var oul=document.getElementById("ul")
+
+		buu.onclick=function(){
+			var a=tet.value
+			var b=area.value
+			var oli=document.createElement("li")
+			var oli2=document.createElement("li")
+			oul.appendChild(oli)
+			oul.appendChild(oli2)
+			oli.innerHTML=a+"<a href='#' id='sc'>删除</a>"
+			oli2.innerHTML=b
+
+			
+		}
+
+
+
+
+		</script>
+
+
+	</div>
+</body>
+</html>

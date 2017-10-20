@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>时钟</title>
+	</head>
+	<body>
+		<script>
+			document.write(new Date().toLocaleString());
+			//定时器
+			setInterval(function(){
+				//获取系统时间
+				var riq = new Date()
+				//用tolocalestring 转化为当地时间格式
+				var riq2 = riq.toLocaleString();
+				//在页面打印
+				//document.write(riq2);
+				//dom中  在body中打印
+				document.body.innerHTML= riq2;
+			},1000)
+		</script>
+	</body>
+	
+</html>

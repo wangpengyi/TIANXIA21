@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//第一题
+	/*var cat={
+		"name":"加菲猫",
+		"color":"yellow",
+		"age":3
+		}
+		alert(cat.name)*/
+
+	function Cat(name,color,age) {
+		this.name=name,
+		this.color=color,
+		this.age=age,
+		this.kai=function(){
+			alert(this.color)
+		}
+	}
+	var Cat1=new Cat("加菲猫","黄色","三岁")
+	for (cat2 in Cat1){
+		cc=cc+Cat1[cat2];
+		
+	};
+document.write()
+
+	//第二题
+	/*function Hero(name,job,skillOne,skillAll){
+		this.name=name,
+		this.job=job,
+		this.skillOne=skillOne,
+		this.skillAll=skillAll,
+		this.yx=function(){
+			document.write("英雄"+this.name+","+"职业"+this.job+","+"一技能"+this.skillOne+","+"大招"+this.skillAll+","+"<br>");
+			document.write(this.job+this.name+"技能一"+this.skillOne+"<br>");
+			document.write(this.job+this.name+"大招"+this.skillAll+"<br>");
+		}
+	}
+	var yx1=new Hero("诸葛亮","法师","东风破袭","元气弹")
+	yx1.yx()*/
+	
+	</script>
+</body>
+</html>

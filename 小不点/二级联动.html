@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select name="" id="sheng">
+			<option>--请选择--</option>
+			<option>北京</option>
+			<option>上海</option>
+			<option>杭州</option>
+		</select>
+		<select name="" id="shi">
+			<option>--请选择--</option>
+		</select>
+		<script>
+			//创建城市
+			var city = [["北京1","北京2"],["上海1","上海2"],["杭州1","杭州2"]];
+			//获取省 市
+			var osheng = document.getElementById("sheng");
+			var oshi = document.getElementById("shi");
+			//给省添加一个事件 内容改变事件
+			osheng.onchange = function(){
+				//获取当前选中的下标
+				var b = osheng.selectedIndex;
+				//console.log(b); 检测是否获取下标
+				//定义一个数组保存省对应的所有城市
+				var arr = city[b-1];
+				//把城市长度赋值为1
+				oshi.length = 1;
+				console.log(oshi.length);
+				//遍历当前省的所有城市
+				for(var i=0;i<arr.length;i++){
+					//创建城市option
+					var opt = document.createElement("option");
+					//给每个option赋值
+					opt.innerHTML = arr[i];
+					//把每个option添加到市下拉列表框中
+					oshi.appendChild(opt);
+				}
+				
+				
+			}
+			
+		</script>
+	</body>
+</html>

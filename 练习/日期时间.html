@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//获取系统时间
+	//var day=new Date(2016,5,6,17,55,55)
+	//设置时间2017
+	//var day2=new Date(2017,5,25,17,55,55)
+	//var day3=new Date(12315116161)//当只有一窜数字，就为毫秒数，自动转换为日期模式
+	//var day4=new Date(2020,1)
+	//document.write(day+"<br>")
+	//document.write(day2)
+	//document.write(day4+"<br>")
+	//document.write(day.getDay()+"<br>")
+	/*var day=new Date()
+	document.write(day.getDay()+"<br>")//可以返回星期的某一天
+	document.write(day.getHours()+"<br>")//某一小时
+	document.write(day.getMinutes()+"<br>")//某一分钟
+	document.write(day.getSeconds()+"<br>")//某一秒
+	document.write(day.getSeconds()+"<br>")//某一秒
+	document.write(day.getMilliseconds()+"<br>")//某一秒
+	document.write(day.getMonth()+"<br>")//某一月
+	document.write(day.getFullYear(2017)+"<br>")//某一秒
+	document.write(day.getTime()+"<br>")//某一时的毫秒数*/
+
+	//set
+	/*var day2=new Date()
+	day2.setTime(123123)
+	day2.setFullYear(2017)
+	document.write(day2)*/
+	/*var a=new Date();
+	var b=new Date(1998,8,15)
+	var c=a-b
+	alert(c/1000/60/60/24)*/
+	/*var a=new Date();
+	document.write(a.toLocaleString())
+	setInterval(function(){
+		var a=new Date()
+		var b=a.toLocaleString()
+		document.body.innerHTML=b
+		},1000)*/
+	//第二题
+	/*var a=[2,"one",4,2,"zero",2];
+	var c=function(arr){
+	var b=0
+	for (var i =0; i<arr.length; i++) {
+		if (typeof arr[i]=="number") {
+			b+=arr[i]
+		};
+	};
+	return b
+}
+	document.write(c(a))*/
+	//游戏
+	/*for (var i =1; i <= 100; i++) {
+		if (i%3==0) {
+			document.write("flip")
+		}else if(i%5==0){
+			document.write("flop")
+		}else if (i%3==0&&i%5==0) {
+			document.write("flipflop<br>")
+		}else{
+			document.write(i+"<br>")
+		}
+
+	};*/
+	//数组去重
+	//var arr=[1,3,3,4,6,6,7,9] 
+	//定义一个新数组
+	//var arr2=[]
+	//for (var i =0; i<arr.length; i++) {
+		//if (arr2.indexOf(arr[i])==-1) {
+		//	arr2.push(arr[i])
+		//};
+	//};
+	//document.write(arr2)
+	var djs=function(sr,btime){
+	var sr=new Date()
+	var btime=new Date(1963,3,7)
+	var bb=sr-btime
+	var tian=parseInt(bb/1000/60/60/24)
+	var xs=parseInt(bb/1000/60/60)%24
+	var fen=parseInt(bb/1000/60)%60
+	var miao=parseInt(bb/1000)%60
+	 return tian+"天"+xs+"小时"+fen+"分"+miao+"秒"
+		}
+		document.write(djs("爸爸",new Date()))
+		setInterval(function(){
+				document.body.innerHTML = djs("爸爸",new Date(1963,3,7));
+				
+			},1000)
+
+	</script>
+</body>
+</html>

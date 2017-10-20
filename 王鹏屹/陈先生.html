@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	姓名：<input type="text" id="txt"><br>
+	内容：<textarea style="vertical-align:top;width:200px;
+	height:200px;" id="nrk"></textarea><br>
+	<button id="bu">提交</button>
+	<h1>显示内容</h1>
+	<div id="box">
+		
+	</div>
+	<script>
+	var tt=document.getElementById("txt")
+	var sty=document.getElementById("nrk")
+	var buoo=document.getElementById("bu")
+	var boxo=document.getElementById("box")
+
+	
+
+	buoo.onclick=function()
+	 {
+	 	var a=tt.value
+		var b=sty.value
+		var pp1=document.createElement("p")
+		var pp2=document.createElement("p")
+
+		pp2.innerHTML=a
+		var sb=document.createTextNode(b)
+		var sc=document.createElement("a")
+		sc.innerHTML="删除"
+		sc.setAttribute("class","sc")
+		pp1.appendChild(pp2)
+		pp1.appendChild(sb)
+		pp1.appendChild(sc)
+		boxo.appendChild(pp1)
+		var osc=document.getElementsByClassName("sc")
+		for (var i =0; i<osc.length; i++) {
+			osc[i].onclick=function(){
+				this.parentNode.parentNode.removeChild(this.parentNode);
+			}
+		};
+	}
+	</script>
+</body>
+</html>

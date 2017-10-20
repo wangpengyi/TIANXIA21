@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.a1{
+				cursor:pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>简易留言板</h1>
+		<input type="text" id="txt" /><input type="button" value="留言"  id="btn"/>
+		<ul style="border:solid 1px red;width:400px" id="box">
+		</ul>
+		<script>
+			//1。获取
+			//获取输入框
+			var txt = document.getElementById("txt");
+			//获取按钮
+     		var btn = document.getElementById("btn");
+			//获取ul
+			var box = document.getElementById("box");
+			//给按钮添加一个点击事件
+			btn.onclick = function(){
+				//拿出输入框的内容
+				var a = txt.value;
+				//创建li
+				var oli = document.createElement("li");
+				//创建删除按钮
+				var oa = document.createElement("a");
+				oa.setAttribute("class","a1");
+				oa.innerHTML = "删除";
+				//把输入框的内容 给 li
+				var ob = document.createTextNode(a);
+				oli.appendChild(ob);
+				//把删除按钮 放到li中
+				oli.appendChild(oa);
+				
+				//oli.innerHTML = a;
+				
+				//把li添加到ul中
+				box.appendChild(oli);
+				txt.value="";
+				//删除功能
+				var del = document.getElementsByClassName("a1");
+				for(var i= 0 ;i<del.length;i++){
+					//给删除按钮加一个点击事件
+					del[i].onclick=function(){
+						//删除 父元素 删除子元素
+						//this.parentNode.parentNode.removeChild(this.parentNode);
+						box.removeChild(this.parentNode);
+						
+						//console.log(this.parentNode.parentNode);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

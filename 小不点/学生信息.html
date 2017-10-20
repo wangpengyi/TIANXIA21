@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  姓名：<input type="text" id="xm"/><br>
+	  年龄：<input type="text" id="nl" /><br>
+	 <button id="tj">提交信息</button>
+	 <button id="sc">全部删除</button>
+	 <table border= "1" cellpadding="0" cellspacing="0">
+	 	<tr>
+	 		<th><button id="qx">全选</button></th>
+	 		<th>姓名</th>
+	 		<th>年龄</th>
+	 		<th>入学时间</th>
+	 		<th>操作</th>
+	 	</tr>
+	 </table>
+	 <script type="text/javascript">
+	 	//获取
+	 	var oxm = document.getElementById("xm");
+	 	var onl = document.getElementById("nl");
+	 	var otj = document.getElementById("tj");
+	 	var osc = document.getElementById("sc");
+	 	var oqx = document.getElementById("qx");
+	 	//点击按钮，添加
+	 	otj.onclick = function(){
+	 		//判断信息是否完整
+	 		if(oxm.value == "" || onl.value == ""){
+	 			alert("请填写完整");
+	 		}else{
+	 		
+	 		//获取输入框内容
+	 		var a = oxm.value;
+	 		var b = onl.value;
+	 		//创建tr
+	 		var otr = document.createElement("tr");
+	 		//给tr添加class名
+	 		otr.setAttribute("class","str");
+	 		//创建5个td
+	 		//第一个单元格
+	 		var otd1 = document.createElement("td");
+	 		otd1.innerHTML = "<input type='checkbox' class='qx2'/>";
+	 		//第二个单元格
+	 		var otd2 = document.createElement("td");
+	 		otd2.innerHTML = a;
+	 		//第三个单元格
+	 		var otd3 = document.createElement("td");
+	 		otd3.innerHTML = b;
+	 		//第四个单元格
+	 		var otd4 = document.createElement("td");
+	 		otd4.innerHTML = new Date().toLocaleString();
+	 		//第五个单元格
+	 		var otd5 = document.createElement("td");
+	 		otd5.innerHTML ="<button class='del'>删除</button>";
+	 		
+	 		//把5个td放到tr中
+	 		otr.appendChild(otd1);
+	 		otr.appendChild(otd2);
+	 		otr.appendChild(otd3);
+	 		otr.appendChild(otd4);
+	 		otr.appendChild(otd5);
+	 		
+	 		//把tr放到tbody中
+	 		//获取tbody
+	 		var otb = document.getElementsByTagName("tbody")[0];
+	 		otb.appendChild(otr);
+	 		//清空输入框中的内容
+	 		 oxm.value = "";
+	 		 onl.value = "";
+	 		//全选  
+	 		//获取所有的全选按钮
+	 		var oqx2 = document.getElementsByClassName("qx2");
+	 		//给全选按钮加上一个点击事件
+	 		oqx.onclick = function(){
+	 			for(var i=0;i<oqx2.length;i++){
+	 				//实现全选 全不选
+	 				if(oqx2[i].checked==true){
+	 					oqx2[i].checked = false;
+	 				}else{
+	 					oqx2[i].checked = true;
+	 				}
+					//实现全选
+	 				//oqx2[i].checked = true;
+	 			}
+	 		}
+	 		
+	 		//单行删除
+	 		var odel = document.getElementsByClassName("del");
+	 		for(var j=0;j<odel.length;j++){
+	 			odel[j].onclick = function(){
+	 				console.log(this.parentNode.parentNode.parentNode);
+	 				this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+	 			}
+	 		}
+	 		//全部删除
+	 		//获取所有创建的tr
+	 		var ostr = document.getElementsByClassName("str");
+	 		osc.onclick= function(){
+	 			for(var k=0;k<ostr.length;k++){
+	 				//选中删除
+//	 				if(oqx2[k].checked == true){
+//	 					 otb.removeChild(ostr[k]);
+//	 				     k--;
+//	 				}
+					//全部删除
+ 					otb.removeChild(ostr[k]);
+				     k--;
+	 				
+	 			}
+	 		   
+	 		}
+	 	 //隔行变色
+	 	 //tr已经获取了
+	 	 for(var m = 0 ;m<ostr.length;m++){
+	 	 	//判断是否为偶数
+	 	 	if(m%2 == 0){
+	 	 		//是偶数就变为粉红色
+	 	 		ostr[m].style.background = "pink";
+	 	 	}
+	 	 }
+	 	 
+	 		
+	 	}
+	 }
+	 </script>
+	</body>
+</html>

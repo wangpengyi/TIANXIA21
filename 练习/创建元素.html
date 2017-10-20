@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*div{
+		width: 100px;
+		height: 200px;
+		background: red
+	}*/
+	</style>
+</head>
+<body>
+	<!--<div class="aa2"></div>
+	<button id="add">删除</button>-->
+	<h1>耍心机哦是靠</h1>
+	<input type="text" class="aa1">
+	<button class="aa2">注册</button>
+	<ul style="border:1px red solid;width:200px;height:200px" class="aa3"></ul>
+	<script>
+	/*var aa=document.createElement("div")[0]
+	var bb=document.getElementsByTagName("body")[0]
+	var cc=document.getElementsByClassName("aa2")[0]
+	var dd=document.createTextNode("市场就那么")
+	console.log(aa)
+	console.log(bb)
+	bb.appendChild(cc)
+	bb.appendChild(dd)
+	var app=document.getElementById("add")
+	add.onclick=function () {
+		bb.removeChild(dd)
+	};*/
+
+	var app=document.getElementsByClassName("aa1")[0]
+	var app2=document.getElementsByClassName("aa2")[0]
+	var app3=document.getElementsByClassName("aa3")[0]
+	//给按钮添加一个点击事件
+	app2.onclick=function(){
+		//拿出输入框的内容
+		var a=app.value
+		//创建li
+		var b=document.createElement("li");
+		//创建删除按钮
+		var c=document.createElement("a")
+		c.setAttribute("class","a1");
+		c.innerHTML="删除"
+		var d=document.createTextNode(a)
+		b.appendChild(d)
+		b.appendChild(c)
+		app3.appendChild(b)
+		app.value=""
+		//app3.appendChild(a);
+		//a.innerHTML=app2.value
+	
+	var add=document.getElementsByClassName("a1")
+	for (var i =0; i<add.length; i++) {
+		add[i].onclick=function(){
+			this.parentNode.parentNode.removeChild(this.parentNode)
+		}
+	};
+}
+	</script>
+</body>
+</html>+

@@ -1,0 +1,110 @@
+1<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.button{
+		width: 100px;
+		height: 50px;
+		background: green;
+	}
+
+	</style>
+</head>
+<body>
+	<h2>注册页面</h2>
+	用户：<input type="text" id="yongh"><p id="opp1">8-12位数</p><br>
+	密码：<input type="text" id="mima"><p id="opp2">首字母大写，其他的有数字和字母8-12位</p><br>
+	确认：<input type="text" id="qr"><p id="opp3">必须和上面一样</p><br>
+	<button class="button" id="bu">注册</button>
+	<table border="1" cellpadding="0" cellspacing="0">
+		<tr>
+		<td>序列号</td>
+		<td>用户名</td>
+		<td>注册时间</td>
+		<td>操作</td>	
+		</tr>
+	</table>
+	<script>
+	var oyongh=document.getElementById("yongh")
+	var omima=document.getElementById("mima")
+	var oqr=document.getElementById("qr")
+	var obttu=document.getElementById("bu")
+	var buuu=document.getElementsByClassName("buu")
+	var tbod=document.getElementsByTagName("tbody")[0]
+	oyongh.onblur=function(){
+		var reg=/^\w{8,11}$/
+		var str=oyongh.value
+		if (oyongh.value=="") {
+			opp1.innerHTML="请输入用户名"
+			opp1.style.color="red"
+		}else if (reg.test(str)) {
+			opp1.innerHTML="格式正确"
+			opp1.style.color="green"
+		}else{
+			opp1.innerHTML="格式错误"
+			opp1.style.color="pink"
+		};
+	}
+	omima.onblur=function(){
+		var reg=/^[A-Z][a-z0-9]{6,9}$/
+		var str=omima.value
+		if (omima.value=="") {
+			opp2.innerHTML="请输入密码"
+			opp2.style.color="red"
+		}else if (reg.test(str)) {
+			opp2.innerHTML="格式正确"
+			opp2.style.color="green"
+		}else{
+			opp2.innerHTML="格式错误"
+			opp2.style.color="pink"
+		};
+	}
+	oqr.onblur=function(){
+		var str=oqr.value
+		if (oqr.value=="") {
+			opp3.innerHTML="请输入"
+			opp3.style.color="red"
+		}else if (oqr.value==omima.value) {
+			opp3.innerHTML="格式正确"
+			opp3.style.color="green"
+		}else{
+			opp3.innerHTML="格式错误"
+			opp3.style.color="pink"
+		};
+	}
+	obttu.onclick=function(){
+		var otr=document.createElement("tr")
+		var otd1=document.createElement("td")
+		var otd2=document.createElement("td")
+		var otd3=document.createElement("td")
+		var otd4=document.createElement("td")
+
+		tbod.appendChild(otr)
+		otr.appendChild(otd1)
+		otr.appendChild(otd2)
+		otr.appendChild(otd3)
+		otr.appendChild(otd4)
+		
+		otd2.innerHTML=oyongh.value
+		otd3.innerHTML=new Date().toLocaleString()
+		otd4.innerHTML="<button class='buu'>删除</button>"
+	}
+
+		for (var i =0; i<buuu.length; i++) {
+		buuu[i].onclick=function(){
+			tbod.removeChild(this.parentNode.parentNode)
+			
+
+		
+	};
+	}
+	
+	
+
+
+
+	</script>
+</body>
+</html>

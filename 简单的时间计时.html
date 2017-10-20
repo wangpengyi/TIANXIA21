@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简单的时间计时</title>
+	</head>
+	<body>
+		<script>
+			setInterval(function(){
+				var d = new Date();
+			    var c = d.toLocaleString();
+				document.body.innerHTML = c;
+			},1000)
+		</script>
+	</body>
+</html>

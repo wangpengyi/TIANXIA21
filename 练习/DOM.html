@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box"></div>
+	<p>目测假哦多开想从昆明</p>
+	<script type="text/javascript">
+	/*var sbox=document.getElementById("box")
+	console.log(sbox)
+	sbox.style=width:200px;*/
+	/*console.log(sbox.innerHTML);
+	console.log(sbox.outerHTML);
+
+	console.log(sbox.innerText);
+	console.log(sbox.outerText);
+	sbox.innerText="你看苍井空吗"
+	sbox.outerText="看"*/
+	/*var w=document.getElementById("box")
+	alert(w.getAttribute("id"))
+	w.setAttribute("id","kk");
+	w.setAttribute("id","id1")*/
+	/*var gx=document.getElementById("qx")
+	var fx=document.getElementsByClassName("aa")
+	gx.onclick=function(){
+		for (var i =0; i <fx.length; i++) {
+			fx[i].checked=gx.checked;
+		/*if (gx.checked==true) {
+			fx[i].checked=true;
+		}else{
+			fx[i].checked=false
+		}
+	};
+	}*/
+	
+	
+	</script>
+	<input type="text" placeholder="请输入" id="aa"><input type="submit" value="点一下" id="bb">
+	<div style="width:200px;height:200px;border:solid 1px red;" id="cc"></div>
+	<script type="text/javascript">
+
+		var a=document.getElementById("aa")
+		var b=document.getElementById("bb")
+		var c=document.getElementById("cc")
+		b.onclick=function(){
+			c.innerHTML+=a.value+"<br>"
+			c.value=""
+
+		}
+	</script>
+</body>
+</html>

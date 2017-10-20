@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+
+
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>Untitled Document</title>
+
+
+
+</head>
+
+<script>
+
+    document.onmousemove = function(ev){
+
+        var oDiv=document.getElementById('div1');
+
+        var e = ev || window.event;
+
+       // oDiv.innerHTML = "X:"+e.clientX+",Y:"+e.clientY;
+
+        oDiv.style.left = e.clientX-50 + "px";
+
+        oDiv.style.top = e.clientY-50 + "px";
+
+       // oDiv.style.position = "absolute";
+
+    }
+
+</script>
+
+<body style="height:2000px;">
+
+<div id="div1" style="width:100px;height:100px;  background:red; position:absolute;"></div>
+
+
+
+
+
+</body>
+
+</html>
+
+	</body>
+</html>

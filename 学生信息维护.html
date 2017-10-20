@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		姓名：<input type="text" id="xm" />
+		年龄 ：<input type="text" id="nl" />
+		<button id="add">添加一个信息</button>
+		<button id="del">删除</button>
+		<table border="1" cellpadding="0" cellspacing="0">
+			<tr>
+				<th>操作</th>
+				<th>姓名</th>
+				<th>年龄</th>
+			</tr>
+		</table>
+		<script>
+			var oxm = document.getElementById("xm");
+			var onl = document.getElementById("nl");
+			var oadd = document.getElementById("add");
+			var odel= document.getElementById("del");
+			oadd.onclick=function(){
+				var a = oxm.value;
+				var b = onl.value;
+				//console.log(a);
+				var otr = document.createElement("tr");
+				var otd1 = document.createElement("td");
+				otd1.innerHTML ="<input type='checkbox' class='fxk'/>"
+				var otd2 = document.createElement("td");
+				otd2.innerHTML = a;
+				var otd3 = document.createElement("td");
+				otd3.innerHTML =b;
+				
+				//把所有td放到tr中
+				otr.appendChild(otd1);
+				otr.appendChild(otd2);
+				otr.appendChild(otd3);
+				
+				//把tr放到tbody中
+				//获取tbody
+				var otb = document.getElementsByTagName("tbody")[0];
+				otb.appendChild(otr);
+				
+				//删除
+				odel.onclick=function(){
+					//alert("dfdf ")
+					var ofxk = document.getElementsByClassName("fxk");
+					for(var i=0;i<ofxk.length;i++){
+						if(ofxk[i].checked == true){
+							otb.removeChild(ofxk[i].parentNode.parentNode);
+						}
+					}
+				}
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		姓名：<input type="text" id="xm" /><br>
+		班级： <input type="text" id="bj" /><br>
+		<button id="tj">添加</button><br>
+		<button id="qx">全部删除</button><br>
+		<button id="xz">选中删除</button><br>
+		<input type="text" id="txt"/><button id="ss">搜索</button>
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<th><input type="checkbox" id="chk2">全选</th>
+				<th>姓名</th>
+				<th>班级</th>
+				<th>操作</th>
+			</tr>
+		</table>
+		<script>
+			//添加 并清空
+			var otj = document.getElementById("tj");
+			var oxm = document.getElementById("xm");
+			var obj = document.getElementById("bj");
+			var otb = document.getElementsByTagName("tbody")[0];
+			otj.onclick=function(){
+//				var zz = /^[0-9a-zA-Z]{6,12}$/;
+//				var zz1= /^\d{6,}$/ 
+//				if(zz.test(oxm.value)){
+//					alert("哈哈哈你真聪明");
+					var a = oxm.value;
+//				}else{
+//					alert("nishizhizhu")
+//				}
+//				
+				var b= obj.value;
+				var tr = document.createElement("tr");
+				tr.setAttribute("class","otr")
+				var td1 = document.createElement("td");
+				var td2 = document.createElement("td");
+				var td3 = document.createElement("td");
+				var td4 = document.createElement("td");
+				td1.innerHTML = "<input type='checkbox' class='chk'>";
+				td2.innerHTML = a;
+				td2.setAttribute("class","sxm");
+				td3.innerHTML = b;
+				td3.setAttribute("class","sxm2");
+				td4.innerHTML = "<button class='del'>删除</button>";
+				//td2.setAttribute("class","otd")
+				tr.appendChild(td1)
+				tr.appendChild(td2)
+				tr.appendChild(td3)
+				tr.appendChild(td4)
+				otb.appendChild(tr);
+				//清空文本框
+				oxm.value = "";
+				obj.value = "";
+				chC()
+				//全选全不选
+				var chk = document.getElementsByClassName("chk");
+				var chk2 = document.getElementById("chk2");
+				chk2.onclick = function(){
+					for(var i = 0;i<chk.length;i++){
+						chk[i].checked = chk2.checked;
+					}
+				}
+				var osxm = document.getElementsByClassName("sxm");
+				var osxm2= document.getElementsByClassName("sxm2");				
+				var oss = document.getElementById("ss");
+				var otxt = document.getElementById("txt");
+				oss.onclick =function(){
+					for(var i = 0;i<osxm.length;i++){
+						/*if(osxm[i].innerHTML.indexOf(otxt.value) == -1　&& osxm2[i].innerHTML.indexOf(otxt.value)==-1){
+							otb.removeChild(osxm[i].parentNode);
+							chC();
+							i--;
+						}*/
+						if(osxm[i].innerHTML != otxt.value){
+							otb.removeChild(osxm[i].parentNode);
+							chC();
+							i--;
+						}
+					}
+				}
+//				console.log(chk.length)
+//				for(var i = 1 ;i<chk.length;i++){
+//					chk[0].onclick= function(){
+//						chk[i].checked = chk[0].checked;
+//					}
+//				}
+
+                 //单行删除
+                 var del = document.getElementsByClassName("del");
+                 for(var j =0;j<del.length;j++){
+                 	del[j].onclick = function(){
+                 		otb.removeChild(this.parentNode.parentNode)
+                 		chC();
+                 	}
+                 	
+                 }
+			
+			
+			//全部删除
+			var qx=document.getElementById("qx");
+			var ootr=document.getElementsByClassName("otr")
+			qx.onclick=function(){
+			for(var k=0;k<ootr.length;k++){
+				otb.removeChild(ootr[k]);
+				k--;
+				}
+			}
+//			var tet=document.getElementById("txt")
+//			var ss=document.getElementById("ss")
+//			var otd=document.getElementsByClassName("otd")
+//			ss.onclick=function(){
+//				for (var i=0;i<otd.length;i++) {
+//					//精确搜索
+//					if (otd[i].innerHTML!=tet.value) {
+//						otb.removeChild(otd[i].parentNode)
+//						i--
+//					}
+//                 //模糊搜索
+////                 if(otd[i].innerHTML.indexOf(tet.value) == -1){
+////                   	otb.removeChild(otd[i].parentNode)
+////						i--
+////                 }
+//				}
+//			}
+		  //选择删除
+		  var oxz = document.getElementById("xz");
+		 // var chk= document.getElementsByClassName("chk");
+		  oxz.onclick=function(){
+		  	for(var m=0;m<chk.length;m++){
+		  		if(chk[m].checked==true){
+		  			otb.removeChild(chk[m].parentNode.parentNode);
+		  			m--;
+		  		}
+		  	}
+		  	chC()
+		  }
+		  
+		  //隔行变色
+		 
+			  function chC(){
+			  	 var ostr = document.getElementsByTagName("tr");
+			  	  for(var i=1;i<ostr.length;i++){
+			  	  	if(i%2 == 0){
+			  	  		ostr[i].style.background = "pink";
+			  	  	}else{
+			  	  		ostr[i].style.background = "yellowgreen";
+			  	  	}
+			  	  }
+			  }
+			}
+		</script>
+	</body>
+</html>

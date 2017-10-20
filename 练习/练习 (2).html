@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	td{
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+	<table border="1" cellpadding="0" cellspacing="0" width="1000">
+		<tr>
+			<td><input type="checkbox" id="qx">全选</td>
+			<td>招聘公司</td>
+			<td>招聘岗位</td>
+			<td>薪水</td>
+			<td>操作</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" class="fx"></td>
+			<td>前端工程师</td>
+			<td>HTML5工程师</td>
+			<td>15-20</td>
+			<td><button class="bu">删除</button></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" class="fx"></td>
+			<td>阿里巴巴</td>
+			<td>HTML5</td>
+			<td>20-30</td>
+			<td><button class="bu">删除</button></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" class="fx"></td>
+			<td>聚美优</td>
+			<td>Nodejs工程师</td>
+			<td>17-23</td>
+			<td><button class="bu">删除</button></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" class="fx"></td>
+			<td>腾讯</td>
+			<td>Angular</td>
+			<td>30-43</td>
+			<td><button class="bu">删除</button></td>
+		</tr>
+	</table>
+	<button id="bbu">全部删除</button>
+	<button id="bbtt">选中删除</button>
+	<script>
+	var oqx=document.getElementById("qx")
+	var btt=document.getElementsByClassName("bbu")
+	var ofx=document.getElementsByClassName("fx")
+	var boo=document.getElementsByClassName("bu")
+	var buuu=document.getElementById("bbu")
+	var bttt=document.getElementById("bbtt")
+	var tbod=document.getElementsByTagName("tbody")[0]
+	oqx.onclick=function() {
+		for (var i =0; i< ofx.length; i++) {
+			if (oqx.checked==false) {
+				ofx[i].checked=false
+			}else if (oqx.checked==true) {
+				ofx[i].checked=oqx.checked
+			};
+		};
+	}
+	buuu.onclick=function(){
+		for (var a =0; a<ofx.length; a++) {
+			if (ofx[a].checked==true) {
+				tbod.removeChild(ofx[a].parentNode.parentNode)
+				a--;
+			};
+		};
+	}
+	
+		for (var b =0; b<boo.length; b++) {
+			boo[b].onclick=function(){
+				tbod.removeChild(this.parentNode.parentNode)
+				b--;
+			};
+	}
+		bbtt.onclick=function(){
+		for (var d =0; d<ofx.length; d++) {
+			if (ofx[d].checked==true) {
+				tbod.removeChild(ofx[d].parentNode.parentNode)
+				d--;
+			};
+		};
+	}
+
+	</script>
+</body>
+</html>

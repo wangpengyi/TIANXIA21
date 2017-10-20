@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table border="1" cellpadding="0" cellspacing="0">
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+			</tr>
+			<tr>
+				<td class="name">李二狗</td>
+				<td class="age">12</td>
+				<td>男</td>
+			</tr>
+			<tr>
+				<td class="name">王春茂</td>
+				<td class="age">38</td>
+				<td>男</td>
+			</tr>
+			<tr>
+				<td class="name">春旺旺</td>
+				<td class="age">20</td>
+				<td>不详</td>
+			</tr>
+			<tr>
+				<td class="name">周华杰</td>
+				<td class="age">19</td>
+				<td>男</td>
+			</tr>
+			<tr>
+				<td class="name">小红红</td>
+				<td class="age">16</td>
+				<td>女</td>
+			</tr>
+		</table>
+		<input type="text" placeholder="给你的后宫选个人吧" id="txt"/><button id="ss">搜搜</button>
+		<script>
+			//获取名字字段
+			var oname = document.getElementsByClassName("name");
+			var otxt = document.getElementById("txt");
+			var oss = document.getElementById("ss");
+			var otab = document.getElementsByTagName("tbody")[0];
+			var oage = document.getElementsByClassName("age");
+			//给搜索按钮添加一个点击事件
+			oss.onclick=function(){
+				for(var i = 0 ;i<oname.length;i++){
+					//模糊搜索
+//					if(oname[i].innerHTML.indexOf(otxt.value) == -1 && oage[i].innerHTML.indexOf(otxt.value)==-1){
+//						otab.removeChild(oname[i].parentNode);
+//						i--;
+//					}
+                   //精确搜索
+                   //oname[i].innerHTML
+                   if(oname[i].innerHTML != otxt.value && oage[i].innerHTML !=otxt.value){
+                   	   otab.removeChild(oname[i].parentNode);
+					   i--;
+                   }
+				}
+			}
+			 
+		</script>
+	</body>
+</html>

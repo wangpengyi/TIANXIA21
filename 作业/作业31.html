@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div{
+		width: 300px;
+		height: 600px;
+		margin-left: 100px;
+		background: pink
+	}
+	p{
+		margin-left: 50px;
+	}
+
+	</style>
+</head>
+<body>
+	<div>
+	昵称：<input type="text" id="txt1"><p class="pp1">长度为0~10位的数字</p>
+	密码：<input type="text" id="txt2"><p class="pp2">长度为0~12位的数字</p>
+	确定	:<input type="text" id="txt3"><p class="pp3">确认两次密码一样</p>
+	邮箱：<input type="text" id="txt4"><p class="pp4">邮箱里必须有@</p>
+	手机：<input type="text" id="txt5"><p class="pp5">长度为11的数字</p>
+	<select id="sheng">
+		<option>--请选择--</option>
+		<option>辽宁</option>
+		<option>河南</option>
+		<option>北京</option>
+		<option>山西</option>
+	</select>
+	<select id="shi">
+		<option>--请选择--</option>
+	</select>
+	<button id="bu">立即注册</button><br/>
+	</div>
+	<script>
+	var  tet1=document.getElementById("txt1")
+	var  tet2=document.getElementById("txt2")
+	var  tet3=document.getElementById("txt3")
+	var  tet4=document.getElementById("txt4")
+	var  tet5=document.getElementById("txt5")
+	var  opp1=document.getElementsByClassName("pp1")[0]
+	var  opp2=document.getElementsByClassName("pp2")[0]
+	var  opp3=document.getElementsByClassName("pp3")[0]
+	var  opp4=document.getElementsByClassName("pp4")[0]
+	var  opp5=document.getElementsByClassName("pp5")[0]
+	tet1.onblur=function(){
+		var reg=/^\w{1,11}$/
+		var str=tet1.value;
+		if (tet1.value=="") {
+			opp1.innerHTML="请输入用户名"
+			opp1.style.color="red"
+		}else if(reg.test(str)) {
+		 	opp1.innerHTML="格式正确"
+			opp1.style.color="green"
+		}else{
+			opp1.innerHTML="格式错误"
+			opp1.style.color="yellow"
+		}
+	}
+	tet2.onblur=function(){
+		var reg=/^\w{1,12}$/
+		var str=tet2.value;
+		if (tet2.value=="") {
+			opp2.innerHTML="请输入密码"
+			opp2.style.color="red"
+		}else if(reg.test(str)) {
+		 	opp2.innerHTML="格式正确"
+			opp2.style.color="green"
+		}else{
+			opp2.innerHTML="格式错误"
+			opp2.style.color="yellow"
+		}
+	}
+	tet3.onblur=function(){
+		var reg=/^\w{1,12}$/
+		var str=tet3.value;
+		if (tet3.value=="") {
+			opp3.innerHTML="请输入密码"
+			opp3.style.color="red"
+		}else if(reg.test(str)) {
+		 	opp3.innerHTML="格式正确"
+			opp3.style.color="green"
+		}else{
+			opp3.innerHTML="格式错误"
+			opp3.style.color="yellow"
+		}
+	}
+	tet4.onblur=function(){
+		var reg=/^\@{1,10}$}/
+		var str=tet4.value;
+		if (tet4.value=="") {
+			opp4.innerHTML="请输入邮箱"
+			opp4.style.color="red"
+		}else if(reg.test(str)) {
+		 	opp4.innerHTML="格式正确"
+			opp4.style.color="green"
+		}else{
+			opp4.innerHTML="格式错误"
+			opp4.style.color="yellow"
+		}
+	}
+	tet5.onblur=function(){
+		var reg=/^\w{1,10}$}/
+		var str=tet5.value;
+		if (tet5.value=="") {
+			opp5.innerHTML="请输入手机号"
+			opp5.style.color="red"
+		}else if(reg.test(str)) {
+		 	opp5.innerHTML="格式正确"
+			opp5.style.color="green"
+		}else{
+			opp5.innerHTML="格式错误"
+			opp5.style.color="yellow"
+		}
+	}
+	</script>
+</body>
+</html>

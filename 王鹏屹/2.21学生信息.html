@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	姓名：<input type="text" id="tet">
+	年龄：<input type="text" id="txt">
+	<button id="bu">提交信息</button>
+	<button id="but">删除</button>
+	<table border="1" cellpadding="0" cellspacing="0">
+		<tr>
+			<td><button class="ton">全选</button></td>
+			<td>学生姓名</td>
+			<td>年龄</td>
+			<td>入学时间</td>
+		</tr>
+	</table>
+	<script>
+	var text1=document.getElementById("tet");
+	var text2=document.getElementById("txt");
+	var button1=document.getElementById("bu");
+	var button2=document.getElementById("but");
+	var tbod=document.getElementsByTagName("tbody")[0]
+	button1.onclick=function()
+	{
+		
+		var otr=document.createElement("tr");
+		var otd1=document.createElement("td");
+		var otd2=document.createElement("td");
+		var otd3=document.createElement("td");
+		var otd4=document.createElement("td");
+
+		tbod.appendChild(otr)
+		
+		otr.appendChild(otd1)
+		otr.appendChild(otd2)
+		otr.appendChild(otd3)
+		otr.appendChild(otd4)
+
+		otd1.innerHTML="<input type='checkbox' class='kk'>"
+		otd2.innerHTML=text1.value
+		otd3.innerHTML=text2.value
+		otd4.innerHTML=new Date();
+
+	button2.onclick=function()
+	{
+		var fx=document.getElementsByClassName("kk")
+		for (var i =0; i<fx.length; i++) {
+			if (fx[i].checked==true) {
+				tbod.removeChild(fx[i].parentNode.parentNode)
+				i--;
+			};		
+			};		
+		}
+	}
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table border="1" cellpadding="0" cellspacing="0">
+	<tr>
+		<td class="name">姓名</td>
+		<td>年龄</td>
+		<td>长相</td>
+	</tr>
+	<tr>
+		<td class="name">王鹏屹</td>
+		<td class="number">20</td>
+		<td>绝世美男</td>
+	</tr>
+	<tr>
+		<td class="name">范翔</td>
+		<td class="number">22</td>
+		<td>神秘帅哥</td>
+	</tr>
+	<tr>
+		<td class="name">李傲</td>
+		<td class="number">62</td>
+		<td>歪瓜劣枣</td>
+	</tr>
+	</table>
+	<input type="text" id="txt">
+	<button id="ss">搜索</button>
+	<script>
+	var vname=document.getElementsByClassName("name");
+	var text=document.getElementById("txt");
+	var ass=document.getElementById("ss")
+	var anumber=document.getElementsByClassName("number")
+	var tbod=document.getElementsByTagName("tbody")[0]
+	ass.onclick=function(){
+		for (var i =0; i<vname.length; i++) {
+			if (vname[i].innerHTML.indexOf(text.value)==-1&&anumber[i].innerHTML.indexOf(text.value)==-1){
+				tbod.removeChild(vname[i].parentNode)
+				i--;
+			}
+			};
+		};
+	}
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<span>标题</span><br>
+		<input type="text" id="bt" /><br>
+		<span>内容</span><br>
+		<textarea name="" rows="" cols="" id="area"></textarea><br>
+		<button id="fb">发布</button>
+		<div id="box"></div>
+		<script>
+			var ofb = document.getElementById("fb");
+			var bt = document.getElementById("bt");
+			var oarea = document.getElementById("area");
+			var obox= document.getElementById("box");
+			ofb.onclick=function(){
+				var a = bt.value;
+				var b = oarea.value;
+				var ospan = document.createElement("span");
+				ospan.innerHTML = a+new Date().toLocaleString()+"<a>删除</a>";
+				var op = document.createElement("p");
+				op.innerHTML = b;
+				var odiv = document.createElement("div");
+				odiv.appendChild(ospan);
+				odiv.appendChild(op);
+				//需要最新留言置顶
+//				if(obox.children.length==0){
+//					obox.appendChild(odiv);
+//				}else{
+//					obox.insertBefore(odiv,obox.children[0]);
+//				}
+                obox.appendChild(odiv);
+				
+				bt.value="";
+				oarea.value = "";
+				//删除
+				var del = document.getElementsByTagName("a");
+				for(var i = 0;i<del.length;i++){
+					del[i].onclick=function(){
+						obox.removeChild(this.parentNode.parentNode);
+					}
+				}
+			
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//命名函数
+	/*function hans(){
+		alert("谈粗腰就会")
+	}
+	//函数调用
+	hans();*/
+	/*function hans(a,b,c){
+		alert(a*b*c)
+	}hans(2,10,7)*/
+	//匿名函数
+	/*var d=function(a,b){
+		var h=0;
+		for (var i =a; i <= b; i++) {
+			h+=i
+			
+		}
+		alert(h)
+		return h;
+			
+	}
+	alert(d(prompt(),prompt()))*/
+	/*var a=function (){
+		alert("你还伤了我的蛋蛋")
+	}*/
+	/*var app2=function(a,b){
+		alert(Number(a)+Number(b))
+		return app2;
+	}
+	app2(prompt(),prompt())*/
+	/*var rep1=function(a,b){
+		document.write(a*b+"<br>")
+		return rep1;
+	}
+	var rep2=function(a,b){
+		document.write(a*b+"<br>")
+		return rep2;
+	}
+	rep1(5,6)
+	rep2(2,3)
+
+	var sumq=function (rep1,rep2){
+		document.write(rep1+rep2)
+		return sumq;
+	}
+	sumq(30,6);*/
+	/*var a=function(a,b){
+		//alert(a/b)
+		return a/b
+	}
+	alert(a(prompt(),prompt()))*/
+	/*var a=3
+	function dayig(){
+		var a="zz";
+		alert(a);
+	}
+	function daying(){
+		alert(m+"md");
+	}
+	dayig();
+	daying();*/
+	/*function mmp(a,b){
+		alert(a+b);
+	}
+	function mmp(a,b){
+		alert(a-b);
+	}
+	mmp(3,4)*/
+
+	/*var a=function(){
+		var j=1
+		for (var i= 1; i<= 10; i++) {
+			j*=i
+		};
+		document.write(j)
+	}
+	a();*/
+	function jc(a){
+		if (a<=1) {
+			return 1;
+		}else{
+			return a*jc(a-1);
+		}
+	}
+	alert(jc(10));
+	</script>
+</body>
+</html>

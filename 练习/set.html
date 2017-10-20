@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+   <script type="text/javascript">
+     var day = new Date();
+	 document.write(day+"<br>"); //获取系统时间
+	//setTime() 方法以毫秒设置 Date 对象。 （以毫秒数设置日期）
+	 var d= day.setTime(12345678);  //毫秒数要足够大，不然就返回1970
+	 document.write(day+"<br>");//通过设置毫秒数来设置时间
+	 
+     //设置年份，为四位整数,设置小数的时候，去掉小数部分
+	 var y = day.setFullYear(3456);
+     document.write(day+"<br>");
+     
+	 //设置，月份（0-11） 超出范围，则年+1，月从1月开始。 日（1-31），超出范围，月+1，从第一天开始
+	 var y2= day.setFullYear(3456,12,32);
+	  document.write(day+"<br>");
+	  
+
+	//setMonth() 方法用于设置月份。第一参数为月份（0-11），9表示10月，第二个参数为天数，（1-31）
+	 var y3 = day.setMonth(9,3); //10月3号
+	 document.write(day+"<br>");
+
+	 //setDate() 方法用于设置一个月的某一天。
+	 var y4 = day.setDate(1);
+	 document.write(day+"<br>");
+	 document.write(day.getDate()+"<br>");
+
+	 //没有setDay()方法  表示星期的某一天的数字
+
+	  //setHours() 方法用于设置指定的时间的小时字段。
+     var y5 = day.setHours(23);
+	 document.write(day+"<br>");
+     document.write(day.getHours()+"<br>");
+
+	 //setMinutes() 方法用于设置指定时间的分钟字段
+	 var y6 = day.setMinutes(30);
+	 document.write(day+"<br>");
+	 document.write(day.getMinutes()+"<br>");
+
+	  //setSeconds() 用于设置秒数
+	  var y7 =day.setSeconds(59);
+	 document.write(day+"<br>");
+	 document.write(day.getSeconds()+"<br>");
+
+	//setMilliseconds用于设置毫秒数（0-999），不满一毫秒不显示，满一毫秒，秒数加1
+	 var y8 = day.setMilliseconds(800);
+	  document.write(day+"<br>");
+
+     document.write(day.toString()+"我是toString之后的<br>");
+     document.write(day.toLocaleString()+"<br>");
+//    document.write(day.valueOf()+"<br>");
+//    document.write(day.getTime()+"<br>");
+
+
+
+   </script>
+ </body>
+</html>

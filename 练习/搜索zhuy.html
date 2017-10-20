@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	歌手：<input type="text" id="tet1"><br>
+	地区：<input type="text" id="tet2"><br>
+	性别：<input type="text" id="tet3"><br>
+	歌曲：<input type="text" id="tet4"><br>
+	<button id="bu">添加</button>
+	<table border="1" cellspacing="0" cellpadding="0">
+		<tr>
+			<td>歌手</td>
+			<td>地区</td>
+			<td>性别</td>
+			<td>歌曲名称</td>
+		</tr>
+	</table>
+	<input type="text" class="txet">
+	<button id="ss">搜索</button>
+	<script>
+	var txt1=document.getElementById("tet1")
+	var txt2=document.getElementById("tet2")
+	var txt3=document.getElementById("tet3")
+	var txt4=document.getElementById("tet4")
+	var buton=document.getElementById("bu")
+	var tbod=document.getElementsByTagName("tbody")[0]
+
+	buton.onclick=function(){
+		var otr=document.createElement("tr")
+		var otd1=document.createElement("td")
+		var otd2=document.createElement("td")
+		var otd3=document.createElement("td")
+		var otd4=document.createElement("td")
+
+			otd1.setAttribute("class","name")
+			otd1.innerHTML=txt1.value
+			otd2.innerHTML=txt2.value
+			otd3.innerHTML=txt3.value
+			otd4.innerHTML=txt4.value
+		
+		tbod.appendChild(otr)
+		otr.appendChild(otd1)
+		otr.appendChild(otd2)
+		otr.appendChild(otd3)
+		otr.appendChild(otd4)	
+	}
+	var txxt=document.getElementsByClassName("txet")[0]
+		var buh=document.getElementById("ss")
+		var sname=document.getElementsByClassName("name")
+		buh.onclick=function(){
+			for (var i =0; i<sname.length; i++) {
+				if(sname[i].innerHTML.indexOf(txxt.value)==-1){
+					tbod.removeChild(sname[i].parentNode)
+				i--;
+				};
+			};
+		}
+
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<textarea name="" rows="12" cols="42" id="nr"></textarea><br />
+		<button id="fb">发布</button>
+		<ul id="box"></ul>
+		
+		<script>
+			var onr=document.getElementById("nr")
+			var obox=document.getElementById("box")
+			
+			var ofb=document.getElementById("fb")
+			
+			ofb.onclick=function(){
+				var a=onr.value
+				var oli=document.createElement("li")
+				oli.innerHTML=a+"<button class='sc'>删除</button>"+"</li>"
+				obox.appendChild(oli)
+				onr.value=""
+				
+			//删除
+			var osc=document.getElementsByClassName("sc")
+			for(var i=0;i<osc.length;i++){
+				osc[i].onclick=function(){
+					this.parentNode.parentNode.removeChild(this.parentNode)
+				}
+			}
+			}
+			
+		</script>
+	</body>
+</html>

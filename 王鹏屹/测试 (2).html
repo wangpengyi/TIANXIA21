@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	姓名：<input type="text" id="txt1"><br>
+	班级：<input type="text" id="txt2"><br>
+	<button id="bu">添加</button>
+	<table border="1" cellpadding="0" cellspacing="0">
+		<tr>
+			<td><input type="checkbox" class="buu">全选</td>
+			<td>姓名</td>
+			<td>班级</td>
+			<td>登录时间</td>
+			<td>操作</td>
+		</tr>
+	</table>
+	<button id="but">全部删除</button>
+	<script>
+	var text1=document.getElementById("txt1")
+	var text2=document.getElementById("txt2")
+	var button1=document.getElementById("bu")
+	var button2=document.getElementById("but")
+	var tbod=document.getElementsByTagName("tbody")[0]
+	button1.onclick=function()
+	{	
+
+		var a=text1.value
+		var b=text2.value
+		var c=new Date().toLocaleString()
+
+		var otr=document.createElement("tr")
+		var otd1=document.createElement("td")
+		var otd2=document.createElement("td")
+		var otd3=document.createElement("td")
+		var otd4=document.createElement("td")
+		var otd5=document.createElement("td")
+
+		tbod.appendChild(otr)
+		otr.appendChild(otd1)
+		otr.appendChild(otd2)
+		otr.appendChild(otd3)
+		otr.appendChild(otd4)
+		otr.appendChild(otd5)
+
+		otd1.innerHTML="<input type='checkbox'class='fx'>"
+		otd2.innerHTML=a
+		otd3.innerHTML=b
+		otd4.innerHTML=c
+		otd5.innerHTML="<button class='sc'>删除</button>"
+
+		var qvans=document.getElementsByClassName("buu")[0]
+		var ofx=document.getElementsByClassName("fx")
+
+		qvans.onclick=function(){
+			for (var i =0; i<ofx.length; i++) {
+				if (qvans.checked==false) {
+					ofx[i].checked=false
+				}else if (qvans.checked==true){
+						ofx[i].checked=qvans.checked
+				}
+			};
+
+		}
+		var wsc=document.getElementsByClassName("sc")[0]
+		wsc[a].onclick=function(){
+			for (var a =0; a<wsc.length; a++) {
+			
+			tbod.removeChild(wsc[a].parentNode.parentNode)	
+			}
+		};
+
+
+	}
+	</script>
+</body>
+</html>

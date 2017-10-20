@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	晚会类型：<input type="text" id="txt1"><br>
+	晚会地点：<input type="text" id="txt2"><br>
+	门票价格：<input type="text" id="txt3"><br>
+	<button id="bu">添加信息</button>
+	<button id="but">全部删除</button>
+	<table border="1" cellspacing="0" cellpadding="0">
+		<tr>
+			<td>晚会类型</td>
+			<td>晚会地点</td>
+			<td>门票价格</td>
+		</tr>
+	</table>
+	<script>
+	var tx1=document.getElementById("txt1")
+	var tx2=document.getElementById("txt2")
+	var tx3=document.getElementById("txt3")
+	var buo=document.getElementById("bu")
+	var butoo=document.getElementById("but")
+	var tbod=document.getElementsByTagName("tbody")[0]
+	buo.onclick=function() {
+		var a=tx1.value
+		var b=tx2.value
+		var c=tx3.value
+	var otr=document.createElement("tr")
+	var otd1=document.createElement("td")
+	var otd2=document.createElement("td")
+	var otd3=document.createElement("td")
+
+	tbod.appendChild(otr)
+	otr.appendChild(otd1)
+	otr.appendChild(otd2)
+	otr.appendChild(otd3)
+
+	otd1.innerHTML=a
+	otd2.innerHTML=b
+	otd3.innerHTML=c
+
+	otd1.setAttribute("class","bb")
+	var tdd=document.getElementsByClassName("bb")
+	butoo.onclick=function(){
+		for (var i= 0; i< tdd.length; i++) {
+			tbod.removeChild(tdd[i].parentNode)
+			i--;
+		};
+	}
+}
+	</script>
+</body>
+</html>

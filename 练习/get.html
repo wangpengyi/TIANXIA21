@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+   //创建时间,获取当前系统时间
+   var day = new Date();
+   //设置时间 2017年5月
+   var day4 = new Date(2020,0);
+   var day2 = new Date(2017,4,31,5,55,55);
+   var day3 = new Date(123456878);//当只有一串数字，就为毫秒数，自动转换为日期格式
+   document.write(day4+"<br>")
+   document.write(day+"<br>");
+   //getDay方法可返回表示星期的某一天的数字。  返回0-6 星期天为0
+   document.write(day.getDay()+"<br>");
+   
+   //getHours() 方法可返回时间的小时字段。 返回的是0-23
+   document.write(day.getHours()+"<br>");  
+   
+   //getMinutes() 方法可返回时间的分钟字段。 返回的是0-59
+   document.write(day.getMinutes()+"<br>");
+   
+   //getSeconds()返回秒数    返回0-59
+   document.write(day.getSeconds()+"<br>"); 
+   
+   //getMilliseconds() 返回毫秒数  返回的是0-999
+   document.write(day.getMilliseconds()+"<br>"); 
+   
+   //getMonth() 返回的月份  返回0-11 1月0 12月11
+   document.write(day.getMonth()+1+"<br>");   //获取当前月份 我们都会+1
+   //getFullYear() 方法可返回一个表示年份的 4 位数字
+    document.write(day.getFullYear()+"<br>"); 
+   //getTime() 方法可返回距 1970 年 1 月 1 日之间的毫秒数。
+    document.write(day.getTime()+"<br>");
+	//getDate() 方法可返回月份的某一天。1-31
+    document.write(day.getDate());
+
+  </script>
+ </body>
+</html>

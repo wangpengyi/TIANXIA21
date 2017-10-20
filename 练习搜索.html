@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	姓名：<input type="text" id="txt1"><br>
+	邮箱：<input type="text" id="txt2"><br>
+	密码：<input type="text" id="txt3"><br>
+	地区：<select id="shemg">
+		<option>--请输入--</option>
+		<option>北京</option>
+		<option>上海</option>
+	</select>
+	<select id="shi">
+		<option>--请输入--</option>
+	</select><br>
+	<button id="bu">添加</button>
+	<button id="btt">删除</button>
+	<table border="1" cellspacing="0" cellpadding="0">
+		<tr>
+			<td><input type="checkbox" id="qx"></td>
+			<td>姓名</td>
+			<td>邮箱</td>
+			<td>密码</td>
+		</tr>
+	</table>
+	<script>
+	var tet1=document.getElementById("txt1")
+	var tet2=document.getElementById("txt2")
+	var tet3=document.getElementById("txt3")
+	var obu=document.getElementById("bu")
+	var obt=document.getElementById("btt")
+	var oqx=document.getElementById("qx")
+	var ofx=document.getElementsByClassName("fx")
+	var tbod=document.getElementsByTagName("tbody")[0]
+	obu.onclick=function(){
+		var otr=document.createElement("tr")
+		var otd1=document.createElement("td")
+		var otd2=document.createElement("td")
+		var otd3=document.createElement("td")
+		var otd4=document.createElement("td")
+		tbod.appendChild(otr)
+		otr.appendChild(otd1)
+		otr.appendChild(otd2)
+		otr.appendChild(otd3)
+		otr.appendChild(otd4)
+		otd1.innerHTML="<input type='checkbox' class='fx'>"
+		otd2.innerHTML=tet1.value
+		otd3.innerHTML=tet2.value
+		otd4.innerHTML=tet3.value
+		if (ofx.length%2==1) {
+			otd1.parentNode.style.backgroundColor="yellow"
+		}else{
+			otd1.parentNode.style.backgroundColor="red"
+		}
+	}
+	oqx.onclick=function(){
+		for (var i =0; i<ofx.length; i++) {
+			if (oqx.checked==false) {
+				ofx[i].checked=false
+			}else if (oqx.checked==true) {
+				ofx[i].checked=oqx.checked
+			};
+		};
+	}
+	obt.onclick=function(){
+		for (var a =0; a <ofx.length; a++) {
+			if (ofx[a].checked==true) {
+				tbod.removeChild(ofx[a].parentNode.parentNode)
+				a--;
+			};
+		};
+	}
+	var shi2=[["鸟巢","水立方"],["上海大学","东方明珠"]]
+	var osheng=document.getElementById("shemg")
+	var oshi=document.getElementById("shi")
+	osheng.onchange=function(){
+		var a=osheng.selectedIndex;
+		var arr=shi2[a-1]
+		oshi.length=1
+		for (var b =0; b<arr.length ; b++) {
+			var op=document.createElement("option")
+			op.innerHTML=arr[b]
+			oshi.appendChild(op)
+		};
+	}
+	</script>
+</body>
+</html>
